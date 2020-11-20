@@ -1,0 +1,31 @@
+{
+  "name": "tag-repo",
+  "description": "This actions provides a way to create a tag on your GitHub repository.",
+  "version": "0.0.1",
+  "author": "mstark5652",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mstark5652/tag-repo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mstark5652/tag-repo/issues"
+  },
+  "homepage": "https://github.com/mstark5652/tag-repo#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "sinon": "^9.2.1",
+    "sinon-chai": "^3.5.0",
+    "standard": "^16.0.1"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0"
+  },
+  "scripts": {
+    "lint": "standard",
+    "test": "export NODE_ENV=test && nyc mocha --recursive --colors"
+  }
+}

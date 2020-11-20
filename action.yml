@@ -1,0 +1,14 @@
+name: 'Tag Repo'
+description: 'This actions provides a way to create a tag on your GitHub repository.'
+inputs:
+  gh-token: 
+    description: 'Your GitHub token for access to create the tag.'
+    required: true
+  build-version:
+    description: 'The version string you want to set the tag name to.'
+    required: true
+  build-message:
+    description: 'Optional. A short description of the release. Defaults to the build-version value.'
+runs:
+  using: 'node12'
+  main: 'index.js'
