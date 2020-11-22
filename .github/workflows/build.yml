@@ -22,7 +22,7 @@ jobs:
         NODE_ENV: test
     - name: Get build version
       id: get-build-version
-      run: echo "::set-output name=build-version::$(node -p \"require('./package.json').version)\""
+      run: echo "::set-output name=build-version::$(node -p \"require('./package.json').version\")"
       shell: bash
     - name: Tag repo
       uses: ./
