@@ -1,7 +1,7 @@
 {
   "name": "tag-repo",
   "description": "This actions provides a way to create a tag on your GitHub repository.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "mstark5652",
   "license": "MIT",
   "repository": {
