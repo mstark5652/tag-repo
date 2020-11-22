@@ -1,9 +1,13 @@
+const path = require('path')
 const core = require('@actions/core')
 const github = require('@actions/github')
 
 const run = async () => {
   const ghToken = core.getInput('gh-token') || process.env.GH_TOKEN
-  const version = core.getInput('build-version') || process.env.BUILD_VERSION
+  let version = core.getInput('build-version') || process.env.BUILD_VERSION
+  if (version === 'node-package') {
+    version = require(path.resolve(__dirname, 'package.json')).version
+  }
   const message = core.getInput('build-message') || process.env.BUILD_MESSAGE || version
 
   if (!ghToken) {
