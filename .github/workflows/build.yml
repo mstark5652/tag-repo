@@ -7,7 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-18.04
-
+    outputs:
+      build-version:
+        value: ${{ steps.get-build-version.outputs.build-version }}
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js 12.x
@@ -20,11 +22,15 @@ jobs:
       run: npm test
       env:
         NODE_ENV: test
+    - name: Get build version
+      id: get-build-version
+      run: echo "::set-output name=build-version::$(node -p "require('./package.json').version)"
+      shell: bash
     - name: Tag repo
       uses: ./
       with:
         gh-token: ${{ secrets.GITHUB_TOKEN }}
-        build-version: node-package
+        build-version: outputs.build-version
         build-message: New release
     - name: Finish
       run: echo 'Finished'
