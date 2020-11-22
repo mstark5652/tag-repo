@@ -26,3 +26,5 @@ jobs:
         gh-token: ${{ secrets.GITHUB_TOKEN }}
         build-version: 'v${{ node -p "require('./package.json').version" }}'
         build-message: 'New release'
+    - name: Finish
+      run: echo 'Finished'
