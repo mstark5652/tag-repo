@@ -28,7 +28,7 @@ jobs:
       uses: ./
       with:
         gh-token: ${{ secrets.GITHUB_TOKEN }}
-        build-version: outputs.build-version
+        build-version: ${{ outputs.build-version }}
         build-message: New release
     - name: Finish
       run: echo 'Finished'
