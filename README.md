@@ -10,6 +10,7 @@ with:
   build-message: 'New release'
 ```
 
+### Dynamic version number from package.json
 Want to dynamically pull the version number? For a standard javascript application, you can replace the build-version value with the following to pull the version number from your package.json.
 * Add an addition step above the tag-repo call
 ```

@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/mstark5652/tag-repo#readme",
   "devDependencies": {
+    "@vercel/ncc": "^0.27.0",
     "chai": "^4.2.0",
     "mocha": "^8.2.1",
     "nyc": "^15.1.0",
@@ -25,7 +26,8 @@
     "@actions/github": "^4.0.0"
   },
   "scripts": {
-    "lint": "standard",
+    "build": "ncc build index.js -o dist",
+    "lint": "standard index.js",
     "test": "export NODE_ENV=test && nyc mocha --recursive --colors"
   }
 }
