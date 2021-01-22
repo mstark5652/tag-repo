@@ -11,4 +11,4 @@ inputs:
     description: 'Optional. A short description of the release. Defaults to the build-version value.'
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'dist/index.js'
